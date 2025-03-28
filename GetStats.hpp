@@ -25,11 +25,13 @@ public:
 
         int count = 1;
 
-        int info = 0;
+        cur = cur -> next;
+
+        int info;
         while(cur != nullptr){
             info = cur -> data;   
             stats[0] = (info < stats[0]) ? info : stats[0];
-            stats[1] = (info > stats[0]) ? info : stats[0];
+            stats[1] = (info > stats[1]) ? info : stats[1];
             stats[2] += info;
             ++count; 
             cur = cur -> next;

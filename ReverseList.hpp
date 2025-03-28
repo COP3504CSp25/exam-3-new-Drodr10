@@ -16,16 +16,17 @@ public:
     
     LinkedList reverseList() const {
         Node* cur = head;
-        
+    
         Node* prev = nullptr;
 
+        LinkedList list;  
+
         while(cur != nullptr){
-            Node* nextNode = cur -> next;
-            cur -> next = prev;
-            prev = cur;
-            cur = nextNode;
+            list.addHead(cur -> data);
+            cur = cur -> next;
         }
         
+        return list;
     }
 
     Node* head = nullptr;
